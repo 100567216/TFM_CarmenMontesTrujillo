@@ -1,6 +1,6 @@
-# TFM_CarmenMontesTrujillo
-Synthetic Data Generation with LLMs
-Code accompanying the Master's Thesis *"Synthetic Data Generation with LLMs"*
+# Synthetic Data Generation with LLMs
+
+Code accompanying the Master's Thesis *"Synthetic Data Generation with LLMs"*  
 (Master's Degree in Big Data Analytics, Universidad Carlos III de Madrid, 2025-2026).
 
 This repository contains the experimental pipeline used to generate, parse,
