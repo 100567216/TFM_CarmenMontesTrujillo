@@ -1,3 +1,4 @@
+Ollama and the LLM model weights are not included in this repository and must be installed separately.
 numpy>=1.24.0
 pandas>=2.0.0
 requests>=2.31.0
