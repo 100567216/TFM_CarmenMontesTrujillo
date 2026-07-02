@@ -63,7 +63,13 @@ python src/run_experiment.py \
     --profile P2_28 \
     --model llama3.2:1b \
     --run_id 1 \
-    --batch_id phase1
+    --temperature 0.2 \
+    --num_predict 2048 \
+    --timeout 600 \
+    --n_examples 3 \
+    --selection_seed 42 \
+    --batch_id phase1 \
+    --output_dir outputs
 ```
 
 Outputs are written to `outputs/` by default (`--output_dir` to change it):
@@ -106,11 +112,11 @@ python src/summarize_results.py --output_dir outputs --batch_id phase1
 This produces, inside `outputs/`: `summary_results.csv`,
 `summary_by_model.csv`, `summary_by_model_method.csv`,
 `summary_by_profile_method.csv` and `summary_by_model_profile_method.csv`.
-The versions used for Chapter 5 of the thesis are provided precomputed in
+The aggregated CSV files used for Chapter 5 of the thesis are stored in
 `results/phase1/` and `results/phase2/`.
 
 ## License
 
-This code is released under the Creative Commons Attribution – Non
-Commercial – Non Derivatives license, matching the license of the
-accompanying thesis.
+This repository is shared as academic material accompanying the Master's Thesis.
+Unless otherwise stated, it follows the same Creative Commons Attribution –
+NonCommercial – NoDerivatives license as the thesis.
