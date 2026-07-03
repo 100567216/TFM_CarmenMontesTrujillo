@@ -25,6 +25,7 @@ results/
   phase2/                             Phase 2: LLM comparison (4 models, 5 methods, 3,600 runs)
     phase2_aggregated_results/        The five aggregated summary CSVs used in Chapter 5
     phase2_individual_results.zip     Raw per-run artifacts (prompt, raw output, series, metrics)
+  prompts/                              One rendered example prompt per generation method (profile P4_30)
 requirements.txt                      Python dependencies
 ```
 
@@ -63,6 +64,21 @@ the model (`*_prompt.txt`), the raw LLM output (`*_raw_output.txt`), the
 final synthetic series (`*_synthetic_series.csv`) and the run-level metrics
 (`*_metrics.json`) — so that every individual generation reported in the
 thesis can be inspected directly.
+
+### Example prompts
+
+The `prompts/` directory contains one rendered example prompt per generation
+method, for the target profile P4_30, exactly as sent to the model
+(llama3.2:1b, Phase 1, run 1). The prompt templates are implemented in
+`src/run_experiment.py`, and the exact prompt of every individual run is
+stored in the per-run result archives (`*_prompt.txt`).
+
+Notes:
+- `validator_feedback_refinement_P4_30.txt` shows the initial generation
+  prompt; subsequent iterations append validator feedback to it.
+- `cllm_generate_curate_P4_30.txt` shows the prompt of one candidate; the
+  workflow generates several candidates with small per-candidate variations
+  and selects the best one.
 
 ## Requirements
 
