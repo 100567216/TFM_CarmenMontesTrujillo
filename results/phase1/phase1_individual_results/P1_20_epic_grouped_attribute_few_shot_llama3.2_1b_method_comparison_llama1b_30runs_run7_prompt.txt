@@ -1,0 +1,78 @@
+
+You are a synthetic time series generator.
+
+Your task is to generate a NEW synthetic daily univariate time series from scratch.
+
+This method uses EPIC-inspired grouped attribute few-shot prompting.
+The examples below are grouped by the temporal attribute they are intended to illustrate.
+Do not copy the examples. Use them to understand the target temporal behavior.
+
+TARGET PROFILE:
+- Number of observations: 20
+- Start date: 2024-01-01
+- Frequency: daily
+- Minimum value: 0.0
+- Maximum value: 1000.0
+
+TARGET TEMPORAL ATTRIBUTES:
+- Trend attribute: stable
+- Periodicity attribute: none
+- Periodicity period: None
+- Local fluctuation attribute: none
+- Expected anomaly count: 0
+- Noise attribute: low
+
+TEMPORAL PATTERN EXPLANATION:
+- The series should not show a strong increasing or decreasing global trend.
+- The baseline level should remain broadly stable over time.
+- The series should not contain a clear weekly seasonal pattern.
+- The series should not contain isolated point anomalies or extreme spikes.
+- Noise should be low.
+
+
+GROUPED ATTRIBUTE FEW-SHOT EXAMPLES:
+
+ATTRIBUTE GROUP 1: stable_trend_attribute
+Purpose: This example illustrates a stable baseline with limited global drift.
+Values: [104.60, 103.50, 102.76, 103.87, 104.60, 104.69, 107.46, 106.26, 103.46, 105.03, 103.93, 103.97, 104.45, 104.89, 103.53, 105.22, 102.25, 103.61, 106.84, 103.64]
+
+
+ATTRIBUTE GROUP 2: noise_attribute
+Purpose: This example illustrates the low-noise scale and local variation expected for the profile.
+Values: [96.60, 95.21, 93.77, 93.96, 94.24, 96.12, 95.65, 96.38, 94.90, 95.67, 96.29, 95.05, 96.07, 94.59, 94.98, 94.96, 93.88, 96.11, 94.84, 95.48]
+
+
+ATTRIBUTE GROUP 3: filler_reference
+Purpose: This additional example provides extra reference context for the target profile.
+Values: [107.12, 106.52, 106.85, 106.59, 107.30, 109.58, 102.58, 106.62, 107.34, 107.54, 106.38, 103.98, 107.60, 110.03, 104.37, 108.53, 106.46, 106.92, 105.20, 106.45]
+
+
+HOW TO USE THE EXAMPLES:
+- Each group illustrates one temporal attribute.
+- Combine the attributes into one new sequence.
+- Keep the trend behavior of the trend group.
+- Keep the periodicity behavior of the periodicity group when present.
+- Keep the anomaly behavior of the local fluctuation group when present.
+- Do not copy any example exactly.
+- Return only the final JSON array of generated values.
+
+IMPORTANT GENERATION RULE:
+The examples are only demonstrations. Your output must be one new sequence for the TARGET PROFILE, not a mixture of copied examples.
+
+OUTPUT REQUIREMENTS:
+- Generate only numeric values.
+- Do NOT generate timestamps.
+- Timestamps will be constructed programmatically.
+- Return only a valid JSON array of numbers.
+- Generate exactly 20 numeric values.
+- All values must be between 0.0 and 1000.0.
+- Do not include markdown, comments, or explanations.
+
+FINAL ANSWER RULE:
+Your entire response must be exactly one JSON array of numbers.
+The first character of your response must be "[".
+The last character of your response must be "]".
+Do not write "Here is", "Values:", explanations, comments, or markdown.
+
+Expected output format:
+[100.0, 105.0, 112.0, 108.0, 115.0]
