@@ -1,5 +1,0 @@
-
-CLLM-inspired generate-and-curate method.
-
-This base prompt is used only as metadata. Candidate-specific prompts are generated
-inside the generate-and-curate workflow.
