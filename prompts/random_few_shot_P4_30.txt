@@ -1,0 +1,73 @@
+
+You are a synthetic time series generator.
+
+Your task is to generate a NEW synthetic daily time series from scratch.
+
+You will receive randomly selected reference examples from a controlled synthetic reference bank.
+These examples are NOT real data.
+They are synthetic prototypes used only to illustrate possible temporal patterns.
+
+TARGET PROFILE:
+- Number of observations: 30
+- Start date: 2024-01-01
+- Frequency: daily
+- Seasonality: none
+- Trend: decreasing
+- Noise: medium
+- Anomalies: none
+- Values must be numeric
+- Values must be between 0.0 and 1000.0
+
+TEMPORAL PATTERN:
+- The series must show a smooth decreasing global trend.
+- Values should generally become lower over time.
+- The series should not contain a clear weekly seasonal pattern.
+- The series should not contain isolated point anomalies or extreme spikes.
+- Noise should be moderate and numerically coherent.
+
+
+RANDOMLY SELECTED REFERENCE EXAMPLES:
+
+Reference example 1 (P4_30_ref_026)
+Features: mean=156.28, std=39.42, trend_slope=-4.536
+Values:
+[220.34, 213.92, 219.55, 211.92, 196.68, 194.57, 194.88, 189.18, 181.7, 188.59, 178.39, 174.45, 165.87, 166.29, 157.94, 153.76, 152.37, 140.05, 146.79, 137.35, 136.67, 123.95, 119.97, 114.63, 115.04, 109.89, 103.53, 97.1, 91.71, 91.45]
+
+
+Reference example 2 (P4_30_ref_013)
+Features: mean=161.06, std=28.69, trend_slope=-3.289
+Values:
+[204.7, 207.13, 205.9, 198.04, 199.8, 184.7, 188.49, 185.37, 179.69, 187.83, 175.74, 171.32, 169.72, 159.16, 160.51, 163.67, 154.63, 150.73, 155.33, 152.26, 146.09, 139.38, 136.98, 131.75, 127.88, 124.52, 122.9, 118.2, 113.1, 116.41]
+
+
+Reference example 3 (P4_30_ref_014)
+Features: mean=161.02, std=25.21, trend_slope=-2.877
+Values:
+[205.47, 202.57, 196.92, 198.66, 195.84, 190.74, 185.01, 181.55, 173.8, 173.48, 171.38, 166.03, 170.45, 171.06, 158.13, 160.79, 151.58, 152.06, 147.26, 150.4, 141.37, 146.39, 137.47, 132.58, 126.75, 130.9, 130.97, 125.05, 131.37, 124.57]
+
+
+Now generate a NEW value sequence following the target profile.
+Do NOT copy the reference examples exactly.
+Use them only to understand the expected temporal behavior.
+
+IMPORTANT:
+- The reference examples are shown as value sequences.
+- Your final output must also be a value sequence.
+- Do NOT generate timestamps.
+- Do NOT generate objects.
+- The timestamps will be constructed programmatically after generation.
+- The final output must contain exactly 30 numbers.
+
+STRICT OUTPUT RULES:
+- Return ONLY a valid JSON array of numbers.
+- Do NOT include markdown.
+- Do NOT include explanations.
+- Do NOT include comments.
+- Do NOT include text before or after the JSON.
+- Generate EXACTLY 30 numeric values.
+- Values must remain within the allowed range.
+- Do not return objects.
+- Do not return timestamp fields.
+
+Expected output format:
+[100.0, 120.0, 140.0, 130.0, 110.0]

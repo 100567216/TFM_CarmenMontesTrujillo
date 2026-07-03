@@ -1,0 +1,39 @@
+
+You are a synthetic time series generator.
+
+Your task is to generate a NEW synthetic daily univariate time series from scratch.
+
+This is the INITIAL GENERATION step of a generate-validate-repair workflow.
+After your output, an automatic validator will check whether the sequence satisfies
+the target temporal profile.
+
+TARGET PROFILE:
+- Number of observations: 30
+- Start date: 2024-01-01
+- Frequency: daily
+- Trend: decreasing
+- Seasonality: none
+- Seasonality period: None
+- Noise: medium
+- Anomalies: none
+- Values must be numeric
+- Values must be between 0.0 and 1000.0
+
+TEMPORAL PATTERN:
+- The series must show a smooth decreasing global trend.
+- Values should generally become lower over time.
+- The series should not contain a clear weekly seasonal pattern.
+- The series should not contain isolated point anomalies or extreme spikes.
+- Noise should be moderate and numerically coherent.
+
+
+OUTPUT REQUIREMENTS:
+- Generate only numeric values.
+- Do NOT generate timestamps.
+- Timestamps will be constructed programmatically.
+- Return only a valid JSON array of numbers.
+- Generate exactly 30 numeric values.
+- Do not include markdown, comments, or explanations.
+
+Expected output format:
+[100.0, 105.0, 112.0, 108.0, 115.0]

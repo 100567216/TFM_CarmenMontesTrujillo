@@ -1,0 +1,78 @@
+
+You are a synthetic time series generator.
+
+Your task is to generate a NEW synthetic daily time series from scratch.
+
+You will receive residual-aware reference examples from a controlled synthetic reference bank.
+These examples are NOT real data.
+They are synthetic prototypes selected because previous generated series did not cover
+their temporal feature region well.
+
+This method is inspired by TABGEN-ICL's residual-aware in-context example selection,
+but this implementation is adapted to synthetic time series generation and uses prompting only.
+
+TARGET PROFILE:
+- Number of observations: 30
+- Start date: 2024-01-01
+- Frequency: daily
+- Seasonality: none
+- Trend: decreasing
+- Noise: medium
+- Anomalies: none
+- Values must be numeric
+- Values must be between 0.0 and 1000.0
+
+TEMPORAL PATTERN:
+- The series must show a smooth decreasing global trend.
+- Values should generally become lower over time.
+- The series should not contain a clear weekly seasonal pattern.
+- The series should not contain isolated point anomalies or extreme spikes.
+- Noise should be moderate and numerically coherent.
+
+
+RESIDUAL-AWARE REFERENCE EXAMPLES:
+
+Reference example 1 (P4_30_ref_005)
+Features: mean=146.65, std=33.61, trend_slope=-3.855
+Values:
+[202.78, 195.87, 197.3, 191.64, 185.29, 178.86, 180.83, 170.56, 173.93, 179.74, 170.37, 163.81, 156.5, 144.61, 143.51, 151.09, 138.24, 134.84, 133.37, 125.66, 121.14, 122.49, 115.02, 111.88, 107.91, 109.81, 102.71, 99.15, 98.74, 91.72]
+
+
+Reference example 2 (P4_30_ref_019)
+Features: mean=160.71, std=41.47, trend_slope=-4.780
+Values:
+[228.28, 232.65, 219.99, 213.63, 213.47, 200.58, 200.76, 200.85, 190.85, 182.09, 180.77, 180.74, 173.34, 165.59, 161.29, 156.92, 154.54, 152.31, 146.91, 140.72, 131.53, 126.85, 126.85, 117.43, 115.56, 112.21, 103.89, 99.49, 97.14, 93.95]
+
+
+Reference example 3 (P4_30_ref_023)
+Features: mean=156.23, std=35.81, trend_slope=-4.115
+Values:
+[217.09, 218.45, 208.88, 201.83, 202.08, 194.19, 189.56, 183.27, 188.09, 169.1, 177.58, 168.72, 164.82, 168.65, 155.47, 151.5, 149.47, 147.42, 140.09, 131.72, 130.28, 134.28, 125.63, 122.94, 116.15, 110.55, 115.26, 104.12, 99.06, 100.76]
+
+
+Now generate a NEW value sequence following the target profile.
+Do NOT copy the reference examples exactly.
+Use the residual-aware examples only to understand temporal patterns that previous generations
+may not have covered well.
+
+IMPORTANT:
+- The reference examples are shown as value sequences.
+- Your final output must also be a value sequence.
+- Do NOT generate timestamps.
+- Do NOT generate objects.
+- The timestamps will be constructed programmatically after generation.
+- The final output must contain exactly 30 numbers.
+
+STRICT OUTPUT RULES:
+- Return ONLY a valid JSON array of numbers.
+- Do NOT include markdown.
+- Do NOT include explanations.
+- Do NOT include comments.
+- Do NOT include text before or after the JSON.
+- Generate EXACTLY 30 numeric values.
+- Values must remain within the allowed range.
+- Do not return objects.
+- Do not return timestamp fields.
+
+Expected output format:
+[100.0, 120.0, 140.0, 130.0, 110.0]

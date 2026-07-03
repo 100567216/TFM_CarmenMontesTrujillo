@@ -1,0 +1,76 @@
+
+You are a synthetic time series generator.
+
+Your task is to generate a NEW synthetic daily time series from scratch.
+
+You will receive kNN-selected reference examples from a controlled synthetic reference bank.
+These examples are NOT real data.
+They are synthetic prototypes selected because their temporal features are close to the target profile.
+
+This method is inspired by the neighbor-guided context idea used in HARMONIC,
+but this implementation only uses prompting and does not fine-tune the LLM.
+
+TARGET PROFILE:
+- Number of observations: 30
+- Start date: 2024-01-01
+- Frequency: daily
+- Seasonality: none
+- Trend: decreasing
+- Noise: medium
+- Anomalies: none
+- Values must be numeric
+- Values must be between 0.0 and 1000.0
+
+TEMPORAL PATTERN:
+- The series must show a smooth decreasing global trend.
+- Values should generally become lower over time.
+- The series should not contain a clear weekly seasonal pattern.
+- The series should not contain isolated point anomalies or extreme spikes.
+- Noise should be moderate and numerically coherent.
+
+
+KNN-SELECTED REFERENCE EXAMPLES:
+
+Reference example 1 (P4_30_ref_027)
+Features: mean=158.04, std=31.43, trend_slope=-3.621
+Values:
+[209.66, 209.56, 201.38, 199.8, 195.47, 187.69, 192.14, 184.57, 183.26, 175.85, 173.79, 168.43, 170.25, 164.32, 160.89, 159.87, 155.79, 151.22, 142.05, 140.34, 135.99, 136.86, 131.86, 124.3, 123.81, 116.9, 117.03, 109.35, 111.39, 107.44]
+
+
+Reference example 2 (P4_30_ref_013)
+Features: mean=161.06, std=28.69, trend_slope=-3.289
+Values:
+[204.7, 207.13, 205.9, 198.04, 199.8, 184.7, 188.49, 185.37, 179.69, 187.83, 175.74, 171.32, 169.72, 159.16, 160.51, 163.67, 154.63, 150.73, 155.33, 152.26, 146.09, 139.38, 136.98, 131.75, 127.88, 124.52, 122.9, 118.2, 113.1, 116.41]
+
+
+Reference example 3 (P4_30_ref_017)
+Features: mean=160.49, std=28.54, trend_slope=-3.274
+Values:
+[206.1, 204.02, 194.57, 198.37, 195.25, 191.46, 193.52, 189.28, 183.23, 178.31, 179.62, 172.68, 166.58, 160.14, 161.05, 161.68, 163.42, 152.53, 146.33, 141.51, 143.97, 132.74, 137.15, 134.65, 129.96, 124.34, 123.58, 118.85, 112.24, 117.71]
+
+
+Now generate a NEW value sequence following the target profile.
+Do NOT copy the reference examples exactly.
+Use the kNN-selected examples only to understand the expected temporal behavior.
+
+IMPORTANT:
+- The reference examples are shown as value sequences.
+- Your final output must also be a value sequence.
+- Do NOT generate timestamps.
+- Do NOT generate objects.
+- The timestamps will be constructed programmatically after generation.
+- The final output must contain exactly 30 numbers.
+
+STRICT OUTPUT RULES:
+- Return ONLY a valid JSON array of numbers.
+- Do NOT include markdown.
+- Do NOT include explanations.
+- Do NOT include comments.
+- Do NOT include text before or after the JSON.
+- Generate EXACTLY 30 numeric values.
+- Values must remain within the allowed range.
+- Do not return objects.
+- Do not return timestamp fields.
+
+Expected output format:
+[100.0, 120.0, 140.0, 130.0, 110.0]

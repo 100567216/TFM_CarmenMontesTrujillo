@@ -1,0 +1,52 @@
+
+
+Return a JSON array with exactly 30 numbers.
+
+STRICT OUTPUT RULES:
+- Return ONLY the JSON array.
+- No text before or after.
+- No markdown.
+- No explanations.
+- No timestamps.
+- No objects.
+- Only numbers.
+- All values must be between 0.0 and 1000.0.
+
+
+LENGTH REQUIREMENT:
+- Generate EXACTLY 30 numeric values.
+- Count carefully before answering.
+- Do NOT stop early.
+- Do NOT return 10, 14, 20 or 28 values unless that is exactly the required length.
+
+
+
+TARGET TEMPORAL PATTERN:
+- The series must show a smooth decreasing trend.
+- Values should generally decrease over time.
+- There should be no weekly seasonality.
+- There should be no anomalies.
+
+DECREASING TREND:
+- Start near 225.
+- End near 100.
+- Use a gradual downward movement.
+- Avoid sudden jumps.
+- Avoid exponential collapse.
+- Do not make the sequence flat.
+- Do not make it increasing.
+
+NOISE:
+- Use medium noise: allow moderate local variation around the requested pattern.
+- Do not make the sequence perfectly deterministic unless the profile is very simple.
+
+
+CONSTRUCTION GUIDANCE:
+- Generate exactly 30 values from a high starting level to a lower ending level.
+- Add only moderate local variation if required by the noise level.
+- Before answering, count the values and ensure there are exactly 30 numbers.
+
+VALID OUTPUT EXAMPLE FORMAT:
+[225.0, 222.5, 220.0, 217.5, 215.0]
+
+Now return exactly 30 numbers.
