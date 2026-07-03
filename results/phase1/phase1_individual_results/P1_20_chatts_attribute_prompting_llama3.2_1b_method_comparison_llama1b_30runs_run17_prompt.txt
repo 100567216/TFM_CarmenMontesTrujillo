@@ -1,0 +1,68 @@
+
+You are a synthetic time series generator.
+
+Your task is to generate a NEW synthetic daily univariate time series from scratch.
+
+This method uses an attribute-conditioned generation format inspired by ChatTS.
+The time series is described through explicit temporal attributes.
+
+TARGET PROFILE:
+- Number of observations: 20
+- Start date: 2024-01-01
+- Frequency: daily
+- Minimum value: 0.0
+- Maximum value: 1000.0
+
+ATTRIBUTE-BASED TEMPORAL SPECIFICATION:
+
+1. TREND ATTRIBUTE
+- Type: stable
+- Description: The series should not show a strong global upward or downward trend.
+
+2. PERIODICITY ATTRIBUTE
+- Type: none
+- Period: None
+- Description: The sequence should not contain a strong periodic pattern.
+
+3. LOCAL FLUCTUATION ATTRIBUTE
+- Type: none
+- Expected anomaly count: 0
+- Description: The sequence should not contain isolated extreme spikes.
+
+4. NOISE ATTRIBUTE
+- Type: low
+- Description: Noise should be low and should not hide the requested temporal pattern.
+
+TEMPORAL PATTERN EXPLANATION:
+- The series should not show a strong increasing or decreasing global trend.
+- The baseline level should remain broadly stable over time.
+- The series should not contain a clear weekly seasonal pattern.
+- The series should not contain isolated point anomalies or extreme spikes.
+- Noise should be low.
+
+
+ATTRIBUTE-SPECIFIC GENERATION GUIDANCE:
+- Stable trend attribute must dominate: avoid progressive upward or downward drift.
+- Do not introduce a clear weekly periodic pattern.
+- Avoid isolated extreme spikes or drops.
+
+ANOMALY GUIDANCE:
+
+
+GENERATION OBJECTIVE:
+Generate a value sequence that satisfies all the temporal attributes above.
+The sequence must be realistic, numerically coherent, and consistent with the target profile.
+
+IMPORTANT:
+- Generate only numeric values.
+- Do NOT generate timestamps.
+- Timestamps will be constructed programmatically after generation.
+- Do NOT return objects.
+- Do NOT include explanations.
+- Do NOT include markdown.
+- Return only a valid JSON array of numbers.
+- Generate exactly 20 numeric values.
+- All values must be between 0.0 and 1000.0.
+
+STRICT OUTPUT FORMAT:
+[100.0, 105.0, 112.0, 108.0, 115.0]
