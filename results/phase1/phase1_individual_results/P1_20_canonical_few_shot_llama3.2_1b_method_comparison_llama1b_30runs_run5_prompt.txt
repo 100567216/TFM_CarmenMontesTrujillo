@@ -1,0 +1,60 @@
+
+You are a synthetic time series generator.
+
+Your task is to generate a new synthetic time series from scratch.
+
+The target profile is:
+- Number of observations: 20
+- Start date: 2024-01-01
+- Frequency: daily
+- Seasonality: none
+- Trend: none
+- Noise: low
+- Anomalies: none
+- Values must be numeric
+- Values must be between 0.0 and 1000.0
+
+Temporal pattern:
+- The series should not show a strong increasing or decreasing global trend.
+- The baseline level should remain broadly stable over time.
+- The series should not contain a clear weekly seasonal pattern.
+- The series should not contain isolated point anomalies or extreme spikes.
+- Noise should be low.
+
+
+Below are canonical examples.
+These examples are NOT real data. They only illustrate the expected pattern.
+
+
+Example 1: stable low-noise series without seasonality
+[
+  {"timestamp": "2023-01-01", "value": 100.0},
+  {"timestamp": "2023-01-02", "value": 101.0},
+  {"timestamp": "2023-01-03", "value": 99.5},
+  {"timestamp": "2023-01-04", "value": 100.5},
+  {"timestamp": "2023-01-05", "value": 100.0},
+  {"timestamp": "2023-01-06", "value": 98.8},
+  {"timestamp": "2023-01-07", "value": 101.2}
+]
+
+
+Now generate a NEW time series following the target profile.
+
+STRICT OUTPUT RULES:
+- Return ONLY a valid JSON array.
+- Do NOT include markdown.
+- Do NOT include explanations.
+- Generate EXACTLY 20 objects.
+- Each object must contain only:
+  - "timestamp"
+  - "value"
+- The first timestamp must be 2024-01-01.
+- Each next timestamp must increase by exactly one day.
+- Do not repeat timestamps.
+- Do not skip dates.
+
+Expected output format:
+[
+  {"timestamp": "2024-01-01", "value": 100.0},
+  {"timestamp": "2024-01-02", "value": 120.0}
+]
