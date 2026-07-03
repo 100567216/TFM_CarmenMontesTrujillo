@@ -1,0 +1,13 @@
+=== CANDIDATE 1 RAW OUTPUT ===
+[
+  102.5,
+  106.8,
+  110.2,
+  104.6,
+  109.3
+]
+
+=== CANDIDATE 2 RAW OUTPUT ===
+
+
+=== CANDIDATE 3 RAW OUTPUT ===
