@@ -1,0 +1,73 @@
+
+You are a synthetic time series generator.
+
+Your task is to generate a NEW synthetic daily time series from scratch.
+
+You will receive randomly selected reference examples from a controlled synthetic reference bank.
+These examples are NOT real data.
+They are synthetic prototypes used only to illustrate possible temporal patterns.
+
+TARGET PROFILE:
+- Number of observations: 20
+- Start date: 2024-01-01
+- Frequency: daily
+- Seasonality: none
+- Trend: none
+- Noise: low
+- Anomalies: none
+- Values must be numeric
+- Values must be between 0.0 and 1000.0
+
+TEMPORAL PATTERN:
+- The series should not show a strong increasing or decreasing global trend.
+- The baseline level should remain broadly stable over time.
+- The series should not contain a clear weekly seasonal pattern.
+- The series should not contain isolated point anomalies or extreme spikes.
+- Noise should be low.
+
+
+RANDOMLY SELECTED REFERENCE EXAMPLES:
+
+Reference example 1 (P1_20_ref_019)
+Features: mean=109.59, std=1.30, trend_slope=-0.000
+Values:
+[109.15, 110.25, 109.52, 110.11, 108.25, 109.2, 109.91, 111.02, 109.19, 110.76, 109.62, 109.97, 111.59, 107.19, 108.42, 108.23, 106.98, 109.74, 112.13, 110.59]
+
+
+Reference example 2 (P1_20_ref_004)
+Features: mean=95.24, std=0.85, trend_slope=-0.003
+Values:
+[96.6, 95.21, 93.77, 93.96, 94.24, 96.12, 95.65, 96.38, 94.9, 95.67, 96.29, 95.05, 96.07, 94.59, 94.98, 94.96, 93.88, 96.11, 94.84, 95.48]
+
+
+Reference example 3 (P1_20_ref_014)
+Features: mean=106.70, std=1.70, trend_slope=-0.018
+Values:
+[107.12, 106.52, 106.85, 106.59, 107.3, 109.58, 102.58, 106.62, 107.34, 107.54, 106.38, 103.98, 107.6, 110.03, 104.37, 108.53, 106.46, 106.92, 105.2, 106.45]
+
+
+Now generate a NEW value sequence following the target profile.
+Do NOT copy the reference examples exactly.
+Use them only to understand the expected temporal behavior.
+
+IMPORTANT:
+- The reference examples are shown as value sequences.
+- Your final output must also be a value sequence.
+- Do NOT generate timestamps.
+- Do NOT generate objects.
+- The timestamps will be constructed programmatically after generation.
+- The final output must contain exactly 20 numbers.
+
+STRICT OUTPUT RULES:
+- Return ONLY a valid JSON array of numbers.
+- Do NOT include markdown.
+- Do NOT include explanations.
+- Do NOT include comments.
+- Do NOT include text before or after the JSON.
+- Generate EXACTLY 20 numeric values.
+- Values must remain within the allowed range.
+- Do not return objects.
+- Do not return timestamp fields.
+
+Expected output format:
+[100.0, 120.0, 140.0, 130.0, 110.0]
